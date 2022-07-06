@@ -1,0 +1,54 @@
+body {
+  padding: 20px 0;
+}
+
+#game {
+  text-align: center;
+}
+
+#game > table {
+  display: inline-block;
+  border-collapse: separate;
+  border-spacing: calc(4px + 0.5vw);
+}
+
+.smallBoard {
+  position: relative;
+  font-size: calc(40px + 5vw);
+  font-weight: 200;
+}
+
+.smallBoard.enabled {
+  border: 2px solid black;
+}
+
+.smallBoard.disabled {
+  border: 2px solid transparent;
+}
+
+.smallBoard::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  content: attr(data-winner);
+}
+
+.cell {
+  width: calc(14px + 3.2vw);
+  height: calc(14px + 3.2vw);
+  font-size: calc(11px + 1.1vw);
+  font-weight: 300;
+  border: 1px solid silver;
+}
+
+.cell.enabled:hover {
+  cursor: pointer;
+  background-color: silver;
+}
+
+.cell.disabled {
+  cursor: default;
+}

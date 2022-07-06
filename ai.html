@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ten tac toe</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/game.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" data-bs-toggle="tab" href="/"> Home </a>
+              <a class="navbar-brand" data-bs-toggle="tab" href="/ai">
+                Play Against AI
+              </a>
+              <a class="navbar-brand" data-bs-toggle="tab" href="/online">
+                Play Online
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <br />
+        <form>
+          <div class="row">
+            <div class="col-md-4 col-md-push-8">
+              <label for="first"
+                >Who gets to start (whoever starts gets X)</label
+              >
+              <select id="first" class="form-control">
+                <option value="player">Me</option>
+                <option value="computer">AI</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 col-md-push-8">
+              <label for="difficulty">Difficulty Level</label>
+              <select id="difficulty" class="form-control">
+                <option value="1" selected>Easy</option>
+                <option value="4">Medium</option>
+                <option value="8">Hard</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 col-md-push-8">
+              <br />
+              <button type="button" id="new-game" class="btn btn-primary">
+                Start Game
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <br />
+
+        <h2 id="game-caption" class="panel-title">
+          Click on 'Start Game' to start a new game
+        </h2>
+        <div class="panel-body">
+          <div id="game" class="disabled"></div>
+        </div>
+      </main>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $("nav a[href='/" + location.pathname.split("/")[1] + "']")
+        .parent()
+        .addClass("active");
+    </script>
+    <script type="text/javascript" src="../js/game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ten tac toe</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/game.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" data-bs-toggle="tab" href="/"> Home </a>
+              <a class="navbar-brand" data-bs-toggle="tab" href="/ai">
+                Play Against AI
+              </a>
+              <a class="navbar-brand" data-bs-toggle="tab" href="/online">
+                Play Online
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <br />
+        <div>
+          <h1>Ten Tac Toe</h1>
+          <p>
+            Bored with classic X and O? Ten-Tac-Toe is a deep extension of its
+            ubiquitous, simple counterpart, with no known deterministic winning
+            strategy.
+          </p>
+          <p>
+            Play against a world-class AI with varying difficulties, or online
+            with your friends.
+          </p>
+          <br />
+          <div class="row">
+            <div class="col-md-4 col-md-push-8">
+              <h2>Rules</h2>
+              <img src="../assets/ut3-rules.png" height="400px" width="400px" />
+              <br />
+              <br />
+
+              <p>
+                The game starts with X playing wherever they want in any of the
+                81 empty spots. This move "sends" their opponent to its relative
+                location. For example, if X played in the top right square of
+                their local board, then O needs to play next in the local board
+                at the top right of the global board. O can then play in any one
+                of the nine available spots in that local board, each move
+                sending X to a different local board.
+              </p>
+              <p>
+                If a move is played so that it is to win a local board by the
+                rules of normal tic-tac-toe, then the entire local board is
+                marked as a victory for the player in the global board. Once a
+                local board is won by a player, or it is filled completely, no
+                more moves may be played in that board. If a player is sent to
+                such a board, then that player may play in any other board. Game
+                play ends when either a player wins the global board or there
+                are no legal moves remaining, in which case the game is a draw.
+              </p>
+              <p>
+                <a
+                  class="btn btn-lg btn-primary"
+                  href="https://en.wikipedia.org/wiki/Ultimate_tic-tac-toe"
+                  role="button"
+                  >Learn more »</a
+                >
+              </p>
+            </div>
+
+            <div class="col-md-4 col-md-push-8">
+              <h2>The AI</h2>
+              <img src="../assets/minimax.jpeg" height="400px" width="400px" />
+              <br />
+              <br />
+              <p>
+                While regular tic-tac-toe is elementary to solve and can be done
+                nearly instantly using depth-first search, ten-tac-toe cannot be
+                reasonably solved using any brute-force tactics. Therefore, more
+                creative computer implementations are necessary to play this
+                game.
+              </p>
+              <p>
+                I use Minimax to implement the AI - a search tree is created of
+                all the possible moves, and the AI plays the move that maximizes
+                our evaluation function. Since there is a lot of branching in
+                Ultimate T3, I also use alpha-beta pruning to reduce the size of
+                the search tree so the AI can make moves in a reasonable amount
+                of time.
+              </p>
+              <p>
+                The AI, at the hardest difficulty, can easily beat the best
+                human players at the game.
+              </p>
+              <p>
+                <a
+                  class="btn btn-lg btn-primary"
+                  href="https://en.wikipedia.org/wiki/Minimax"
+                  role="button"
+                  >Learn more »</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $("nav a[href='/" + location.pathname.split("/")[1] + "']")
+        .parent()
+        .addClass("active");
+    </script>
+  </body>
+</html>

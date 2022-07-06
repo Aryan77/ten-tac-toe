@@ -1,0 +1,18 @@
+{
+	"name": "ten-tac-toe",
+	"version": "0.1.0",
+	"engines": {
+		"node": "6.9.1"
+	},
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"express": "^4.14.0",
+		"socket.io": "^1.5.1"
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1"
+	}
+}
